@@ -144,10 +144,51 @@
                 <script>
                     // Lista de imágenes del álbum
                     const fotosGaleria = [
-                        "fotos/000_2432.jpg",
-                        "fotos/100_0102.jpg",
-                        "fotos/100_0156.jpg",
-                        "fotos/100_0176.jpg"
+                        "primaria/foto1.jpeg",
+                        "primaria/foto2.jpeg",
+                        "primaria/foto3.jpeg",
+                        "primaria/foto4.jpeg",
+                        "primaria/foto5.jpeg",
+                        "primaria/foto6.jpeg",
+                        "primaria/foto7.jpeg",
+                        "primaria/foto8.jpeg",
+                        "primaria/foto9.jpeg",
+                        "primaria/foto10.jpeg",
+                        "primaria/foto11.jpeg",
+                        "primaria/foto12.jpeg",
+                        "primaria/foto13.jpeg",
+                        "primaria/foto14.jpeg",
+                        "primaria/foto15.jpeg",
+                        "primaria/foto16.jpeg",
+                        "primaria/foto17.jpeg",
+                        "primaria/foto18.jpeg",
+                        "primaria/foto19.jpeg",
+                        "primaria/foto20.jpeg",
+                        "primaria/foto21.jpeg",
+                        "primaria/foto22.jpeg",
+                        "primaria/foto23.jpeg",
+                        "primaria/foto24.jpeg",
+                        "primaria/foto25.jpeg",
+                        "primaria/foto26.jpeg",
+                        "primaria/foto27.jpeg",
+                        "primaria/foto28.jpeg",
+                        "primaria/foto29.jpeg",
+                        "primaria/foto30.jpeg",
+                        "primaria/foto31.jpeg",
+                        "primaria/foto32.jpeg",
+                        "primaria/foto33.jpeg",
+                        "primaria/foto34.jpeg",
+                        "primaria/foto35.jpeg",
+                        "primaria/foto36.jpeg",
+                        "primaria/foto37.jpeg",
+                        "primaria/foto38.jpeg",
+                        "primaria/foto39.jpeg",
+                        "primaria/foto40.jpeg",
+                        "primaria/foto41.jpeg",
+                        "primaria/foto42.jpeg",
+                        "primaria/foto43.jpeg",
+                        "primaria/foto44.jpeg",
+                        "primaria/foto45.jpeg"
                     ];
         
                     function abrirGaleria() {
@@ -157,7 +198,16 @@
                         fotosGaleria.forEach(foto => {
                             const img = document.createElement('img');
                             img.src = foto;
-                            img.style = "width:200px; height:auto; margin:10px; cursor:pointer; border-radius:10px; box-shadow:0px 4px 6px rgba(0,0,0,0.3); transition: transform 0.3s;";
+                            img.style = `
+                                width: 150px;
+                                height: 150px;
+                                object-fit: cover;
+                                margin: 10px;
+                                cursor: pointer;
+                                border-radius: 10px;
+                                box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+                                transition: transform 0.3s;
+                            `;
                             img.onmouseover = () => img.style.transform = "scale(1.1)";
                             img.onmouseout = () => img.style.transform = "scale(1)";
                             img.onclick = () => abrirModalImagen(foto);
