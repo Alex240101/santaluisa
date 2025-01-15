@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message').value;
             
             // Número de WhatsApp
-            const phoneNumber = '934498803';
+            const phoneNumber = '997562008';
             
             // Crear el mensaje para WhatsApp
             const whatsappMessage = encodeURIComponent(`Nombre: ${name}\nMensaje: ${message}`);
