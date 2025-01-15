@@ -166,10 +166,53 @@
                 <script>
                     // Lista de imágenes del álbum
                     const fotosGaleria = [
-                        "fotos/000_2432.jpg",
-                        "fotos/100_0102.jpg",
-                        "fotos/100_0156.jpg",
-                        "fotos/100_0176.jpg"
+                        "inicial/foto1.jpeg",
+                        "inicial/foto2.jpeg",
+                        "inicial/foto3.jpeg",
+                        "inicial/foto4.jpeg",
+                        "inicial/foto5.jpeg",
+                        "inicial/foto6.jpeg",
+                        "inicial/foto7.jpeg",
+                        "inicial/foto8.jpeg",
+                        "inicial/foto9.jpeg",
+                        "inicial/foto10.jpeg",
+                        "inicial/foto11.jpeg",
+                        "inicial/foto12.jpeg",
+                        "inicial/foto13.jpeg",
+                        "inicial/foto14.jpeg",
+                        "inicial/foto15.jpeg",
+                        "inicial/foto16.jpeg",
+                        "inicial/foto17.jpeg",
+                        "inicial/foto18.jpeg",
+                        "inicial/foto19.jpeg",
+                        "inicial/foto20.jpeg",
+                        "inicial/foto21.jpeg",
+                        "inicial/foto22.jpeg",
+                        "inicial/foto23.jpeg",
+                        "inicial/foto24.jpeg",
+                        "inicial/foto25.jpeg",
+                        "inicial/foto26.jpeg",
+                        "inicial/foto27.jpeg",
+                        "inicial/foto28.jpeg",
+                        "inicial/foto29.jpeg",
+                        "inicial/foto30.jpeg",
+                        "inicial/foto31.jpeg",
+                        "inicial/foto32.jpeg",
+                        "inicial/foto33.jpeg",
+                        "inicial/foto34.jpeg",
+                        "inicial/foto35.jpeg",
+                        "inicial/foto36.jpeg",
+                        "inicial/foto37.jpeg",
+                        "inicial/foto38.jpeg",
+                        "inicial/foto39.jpeg",
+                        "inicial/foto40.jpeg",
+                        "inicial/foto41.jpeg",
+                        "inicial/foto42.jpeg",
+                        "inicial/foto43.jpeg",
+                        "inicial/foto44.jpeg",
+                        "inicial/foto45.jpeg",
+                        "inicial/foto46.jpeg",
+                        "inicial/foto47.jpeg"
                     ];
         
                     function abrirGaleria() {
@@ -179,7 +222,16 @@
                         fotosGaleria.forEach(foto => {
                             const img = document.createElement('img');
                             img.src = foto;
-                            img.style = "width:200px; height:auto; margin:10px; cursor:pointer; border-radius:10px; box-shadow:0px 4px 6px rgba(0,0,0,0.3); transition: transform 0.3s;";
+                            img.style = `
+                                width: 150px;
+                                height: 150px;
+                                object-fit: cover;
+                                margin: 10px;
+                                cursor: pointer;
+                                border-radius: 10px;
+                                box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+                                transition: transform 0.3s;
+                            `;
                             img.onmouseover = () => img.style.transform = "scale(1.1)";
                             img.onmouseout = () => img.style.transform = "scale(1)";
                             img.onclick = () => abrirModalImagen(foto);
@@ -233,6 +285,7 @@
                 </style>
             </div>
         </section>
+        
         
     </main>
 
