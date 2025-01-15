@@ -127,7 +127,7 @@ nav {
 
 /* Hero section */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("C:/Users/Alex/Desktop/IEP SANTA LUISA DE MARILLAC/fotos/100_4123.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("fotos/100_4123.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
