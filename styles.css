@@ -4291,10 +4291,10 @@ h3 {
 /* Agregar al archivo styles.css */
 
 .admision-hero {
-  background-color: greenyellow;
+  background-color: #006400;
   background-size: cover;
   background-position: center;
-  color: green;
+  color: white;
   text-align: center;
   padding: 100px 0;
 }
@@ -4507,7 +4507,7 @@ h3 {
 
 .calendar-table th,
 .payments-table th {
-    background-color: #2563eb; /* Azul principal */
+    background-color: #006400; /* Azul principal */
     color: white;
     padding: 1.2rem;
     text-align: left;
@@ -4538,7 +4538,7 @@ h3 {
 .vacation-row {
     background-color: #dbeafe !important; /* Azul claro */
     font-style: italic;
-    color: #1e40af;
+    color: #006400;
 }
 
 .vacation-row td {
@@ -4555,7 +4555,7 @@ h3 {
 /* Encabezados de sección */
 .calendar-section h2,
 .payments-section h2 {
-    color: #1e40af;
+    color: #006400;
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -4572,7 +4572,7 @@ h3 {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(to right, #2563eb, #60a5fa);
+    background: linear-gradient(to right, #006400, #03dac6);
     border-radius: 2px;
 }
 
@@ -4597,7 +4597,7 @@ h3 {
 }
 
 .payment-methods h3 {
-    color: #2563eb;
+    color: #006400;
     margin-bottom: 1rem;
     font-size: 1.25rem;
 }
@@ -4613,7 +4613,7 @@ h3 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #2563eb;
+    color: #006400;
     font-weight: bold;
 }
 
@@ -4701,7 +4701,7 @@ h3 {
 
 .educational-proposal h2 {
   text-align: center;
-  color: green;
+  color: #006400;
   margin-bottom: 2rem;
   font-size: 2.5rem;
 }
@@ -4735,7 +4735,7 @@ h3 {
 }
 
 .proposal-item h3 {
-  color: green;
+  color: #006400;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
