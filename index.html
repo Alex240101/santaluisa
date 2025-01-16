@@ -25,9 +25,14 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="fotos/ico.png" alt="Logo IEP Santa Luisa de Marillac">
-                <img src="fotos/logo_kinder.png" alt="Logo Kindergarten Santa Luisa de Marillac" style="width: 200px; height: auto;">
+                <a href="index.html">
+                    <img src="fotos/ico.png" alt="Logo IEP Santa Luisa de Marillac">
+                </a>
+                <a href="index.html">
+                    <img src="fotos/logo_kinder.png" alt="Logo Kindergarten Santa Luisa de Marillac" style="width: 200px; height: auto;">
+                </a>
             </div>
+            
             
             
             
@@ -165,10 +170,10 @@
                             <p>Estudiante de 3er año</p>
                         </div>
                     </div>
-        
+            
                     <!-- Separador después de la primera fila -->
                     <div class="separator"></div>
-        
+            
                     <!-- Segunda fila de 3 testimonios -->
                     <div class="testimonial-row">
                         <div class="testimonial">
@@ -190,12 +195,9 @@
                             <p>Estudiante de 2do año</p>
                         </div>
                     </div>
-        
+            
                     <!-- Separador después de la segunda fila -->
                     <div class="separator"></div>
-
-                    
-
                 </div>
             </div>
         
@@ -208,6 +210,7 @@
         
                 .testimonial-row {
                     display: flex;
+                    flex-wrap: wrap;
                     justify-content: space-between;
                     width: 100%;
                 }
@@ -238,8 +241,39 @@
                     background-color: #ccc; /* Color del separador */
                     margin: 20px 0; /* Espaciado arriba y abajo del separador */
                 }
+        
+                /* Responsividad para pantallas pequeñas */
+                @media (max-width: 768px) {
+                    .testimonial {
+                        width: 100%; /* Cada testimonio ocupa toda la fila */
+                        margin-bottom: 20px; /* Espacio entre testimonios */
+                    }
+        
+                    .testimonial-row {
+                        flex-direction: column; /* Disposición en columna en lugar de fila */
+                    }
+        
+                    .testimonial:not(:last-child) {
+                        border-right: none; /* Eliminar separadores entre columnas */
+                    }
+        
+                    /* Separadores entre los testimonios en dispositivos móviles */
+                    .testimonial + .testimonial {
+                        margin-top: 20px; /* Espacio entre testimonios */
+                    }
+        
+                    /* Separadores entre cada testimonio en dispositivos móviles */
+                    .testimonial:not(:last-child) {
+                        border-bottom: 2px solid #ccc; /* Separador debajo de cada testimonio */
+                    }
+        
+                    .testimonial-row .separator {
+                        display: none; /* Eliminar el separador entre filas en dispositivos móviles */
+                    }
+                }
             </style>
         </section>
+        
         
 
         <section class="cta-section parallax">
