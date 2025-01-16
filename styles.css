@@ -34,7 +34,7 @@ body {
 /* Header y navegación */
 /* Header styles */
 header {
-  background-color: rgba(0, 100, 0, 0.95); /* Verde oscuro con 95% de opacidad */
+  background-color: rgb(249, 252, 249); /* Verde oscuro con 95% de opacidad */
   box-shadow: var(--box-shadow);
   position: fixed;
   width: 100%;
@@ -44,7 +44,7 @@ header {
 
 /* When scrolled */
 header.scrolled {
-  background-color: rgba(0, 100, 0, 0.98); /* Verde oscuro con 98% de opacidad cuando se hace scroll */
+  background-color: rgb(251, 253, 251); /* Verde oscuro con 98% de opacidad cuando se hace scroll */
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 

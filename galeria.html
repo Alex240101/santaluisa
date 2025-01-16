@@ -1,51 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <!-- Título de la página -->
-        <title>Galería - KINDERGARTEN SANTA LUISA DE MARILLAC</title>
-    
-        <!-- Descripción para motores de búsqueda -->
-        <meta name="description" content="Descubre las fotos y momentos más destacados del Kindergarten Santa Luisa de Marillac. Nuestra galería muestra actividades educativas y eventos especiales.">
-    
-        <!-- Palabras clave para mejorar el SEO -->
-        <meta name="keywords" content="Kindergarten, Santa Luisa de Marillac, galería, fotos, actividades, eventos, educación, niños, escuela">
-    
-        <!-- Autor de la página -->
-        <meta name="author" content="KINDERGARTEN SANTA LUISA DE MARILLAC">
-    
-        <!-- Mejorar la indexación en motores de búsqueda -->
-        <meta name="robots" content="index, follow">
-    
-        <!-- Open Graph Meta Tags para redes sociales (Facebook, Twitter, etc.) -->
-        <meta property="og:title" content="Galería - KINDERGARTEN SANTA LUISA DE MARILLAC">
-        <meta property="og:description" content="Explora nuestra galería de imágenes y conoce más sobre las actividades y eventos de nuestro kindergarten.">
-        <meta property="og:image" content="ruta_a_una_imagen_destacada.jpg">
-        <meta property="og:url" content="https://www.kindergartensantaluisa.com/">
-        <meta property="og:type" content="website">
-    
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Galería - KINDERGARTEN SANTA LUISA DE MARILLAC">
-        <meta name="twitter:description" content="Conoce las actividades y eventos del Kindergarten Santa Luisa de Marillac a través de nuestra galería de fotos.">
-        <meta name="twitter:image" content="ruta_a_una_imagen_destacada.jpg">
-    
-        <!-- Enlaces a los estilos -->
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-        <!-- Agregar el CSS de Lightbox -->
-        <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Agregar el JS de Lightbox -->
-        
+    <!-- Título de la página -->
+    <title>Galería - KINDERGARTEN SANTA LUISA DE MARILLAC</title>
 
-        <!-- Favicons para mejorar la visibilidad -->
-        <link rel="icon" href="fotos/ico.png" type="image/x-icon">
-    </head>
+    <!-- Descripción para motores de búsqueda -->
+    <meta name="description" content="Descubre las fotos y momentos más destacados del Kindergarten Santa Luisa de Marillac. Nuestra galería muestra actividades educativas y eventos especiales.">
+
+    <!-- Palabras clave para mejorar el SEO -->
+    <meta name="keywords" content="Kindergarten, Santa Luisa de Marillac, galería, fotos, actividades, eventos, educación, niños, escuela">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="KINDERGARTEN SANTA LUISA DE MARILLAC">
+
+    <!-- Mejorar la indexación en motores de búsqueda -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags para redes sociales (Facebook, Twitter, etc.) -->
+    <meta property="og:title" content="Galería - KINDERGARTEN SANTA LUISA DE MARILLAC">
+    <meta property="og:description" content="Explora nuestra galería de imágenes y conoce más sobre las actividades y eventos de nuestro kindergarten.">
+    <meta property="og:image" content="ruta_a_una_imagen_destacada.jpg">
+    <meta property="og:url" content="https://www.kindergartensantaluisa.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Galería - KINDERGARTEN SANTA LUISA DE MARILLAC">
+    <meta name="twitter:description" content="Conoce las actividades y eventos del Kindergarten Santa Luisa de Marillac a través de nuestra galería de fotos.">
+    <meta name="twitter:image" content="ruta_a_una_imagen_destacada.jpg">
+
+    <!-- Enlaces a los estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <!-- Favicons para mejorar la visibilidad -->
+    <link rel="icon" href="fotos/ico.png" type="image/x-icon">
     
+    <style>
+        /* Estilos actualizados para el modal y la imagen */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            padding: 20px;
+        }
+
+        /* ACTUALIZACIÓN: Nuevos estilos para controlar mejor el tamaño de la imagen */
+        .modal-content {
+            margin: auto;
+            display: block;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            /* Tamaño máximo actualizado para escritorio */
+            max-width: 800px;
+            width: auto;
+            height: auto;
+            /* Asegura que la imagen no sea más alta que la ventana */
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* ACTUALIZACIÓN: Estilos responsivos para diferentes tamaños de pantalla */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 90%;
+            }
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.1) translateY(-50%)}
+            to {transform: scale(1) translateY(-50%)}
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-btn {
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+    </style>
+</head>
 <body>
     <header>
         <nav>
@@ -57,30 +129,25 @@
                     <img src="fotos/logo_kinder.png" alt="Logo Kindergarten Santa Luisa de Marillac" style="width: 200px; height: auto;">
                 </a>
             </div>
-            <button class="hamburger-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-links">
-                <li><a href="index.html" class="active underline-effect">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="nuestro-colegio.html" class="active underline-effect">Nuestro Colegio</a>
+                    <a href="nuestro-colegio.html">Nuestro Colegio</a>
                     <ul class="dropdown-menu">
                         <li><a href="galeria.html">Galeria</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="propuesta.html" class="active underline-effect">Propuestas</a>
+                    <a href="propuesta.html">Propuestas</a>
                     <ul class="dropdown-menu">
                         <li><a href="cursos.html">Cursos</a></li>
-                        <li><a href="contacto.html" class="underline-effect">Contacto</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="propuesta-educativa.html">Propuesta Educativa</a></li>
                         <li><a href="infraestructura.html">Infraestructura</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="" class="active underline-effect">Niveles</a>
+                    <a href="#">Niveles</a>
                     <ul class="dropdown-menu">
                         <li><a href="inicial.html">Inicial</a></li>
                         <li><a href="primaria.html">Primaria</a></li>
@@ -88,7 +155,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="" class="active underline-effect">Calendario y Pagos</a>
+                    <a href="#">Calendario y Pagos</a>
                     <ul class="dropdown-menu">
                         <li><a href="calendario.html">Calendario 2025</a></li>
                         <li><a href="pagos.html">Pagos 2025</a></li>
@@ -110,131 +177,48 @@
             <h2>Nuestra Galería</h2>
             <p>Explora los momentos especiales de nuestra comunidad educativa</p>
         </section>
-        
-        <section class="gallery-grid">
-            <a href="fotos/000_2432.jpg" data-lightbox="gallery" data-title="Actividades escolares">
-                <img src="fotos/000_2432.jpg" alt="Actividades escolares" class="gallery-item">
-            </a>
-            <a href="fotos/100_0102.jpg" data-lightbox="gallery" data-title="Actividades deportivas">
-                <img src="fotos/100_0102.jpg" alt="Actividades deportivas" class="gallery-item">
-            </a>
-            <a href="fotos/100_0156.jpg" data-lightbox="gallery" data-title="Eventos deportivos">
-                <img src="fotos/100_0156.jpg" alt="Eventos deportivos" class="gallery-item">
-            </a>
-            <a href="fotos/100_0176.jpg" data-lightbox="gallery" data-title="Juegos escolares">
-                <img src="fotos/100_0176.jpg" alt="Juegos escolares" class="gallery-item">
-            </a>
-            <a href="fotos/100_0191.jpg" data-lightbox="gallery" data-title="Actividades al aire libre">
-                <img src="fotos/100_0191.jpg" alt="Actividades al aire libre" class="gallery-item">
-            </a>
-            <a href="fotos/100_0539.jpg" data-lightbox="gallery" data-title="Grupos estudiantiles">
-                <img src="fotos/100_0539.jpg" alt="Grupos estudiantiles" class="gallery-item">
-            </a>
-            <a href="fotos/100_0649.jpg" data-lightbox="gallery" data-title="Eventos institucionales">
-                <img src="fotos/100_0649.jpg" alt="Eventos institucionales" class="gallery-item">
-            </a>
-            <a href="fotos/100_2100.jpg" data-lightbox="gallery" data-title="Celebraciones escolares">
-                <img src="fotos/100_2100.jpg" alt="Celebraciones escolares" class="gallery-item">
-            </a>
-            <a href="fotos/100_3451.JPG" data-lightbox="gallery" data-title="Desfile escolar">
-                <img src="fotos/100_3451.JPG" alt="Desfile escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3452.JPG" data-lightbox="gallery" data-title="Formación escolar">
-                <img src="fotos/100_3452.JPG" alt="Formación escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3453.JPG" data-lightbox="gallery" data-title="Ceremonia institucional">
-                <img src="fotos/100_3453.JPG" alt="Ceremonia institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_3459.JPG" data-lightbox="gallery" data-title="Desfile patriótico">
-                <img src="fotos/100_3459.JPG" alt="Desfile patriótico" class="gallery-item">
-            </a>
-            <a href="fotos/100_3460.JPG" data-lightbox="gallery" data-title="Marcha escolar">
-                <img src="fotos/100_3460.JPG" alt="Marcha escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3481.JPG" data-lightbox="gallery" data-title="Presentación estudiantil">
-                <img src="fotos/100_3481.JPG" alt="Presentación estudiantil" class="gallery-item">
-            </a>
-            <a href="fotos/100_3485.JPG" data-lightbox="gallery" data-title="Desfile institucional">
-                <img src="fotos/100_3485.JPG" alt="Desfile institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_3486.JPG" data-lightbox="gallery" data-title="Actividad escolar">
-                <img src="fotos/100_3486.JPG" alt="Actividad escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3487.JPG" data-lightbox="gallery" data-title="Evento escolar">
-                <img src="fotos/100_3487.JPG" alt="Evento escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3489.JPG" data-lightbox="gallery" data-title="Desfile estudiantil">
-                <img src="fotos/100_3489.JPG" alt="Desfile estudiantil" class="gallery-item">
-            </a>
-            <a href="fotos/100_3490.JPG" data-lightbox="gallery" data-title="Marcha institucional">
-                <img src="fotos/100_3490.JPG" alt="Marcha institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_3505.JPG" data-lightbox="gallery" data-title="Celebración escolar">
-                <img src="fotos/100_3505.JPG" alt="Celebración escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3508.JPG" data-lightbox="gallery" data-title="Actividad patriótica">
-                <img src="fotos/100_3508.JPG" alt="Actividad patriótica" class="gallery-item">
-            </a>
-            <a href="fotos/100_3517.JPG" data-lightbox="gallery" data-title="Desfile estudiantil">
-                <img src="fotos/100_3517.JPG" alt="Desfile estudiantil" class="gallery-item">
-            </a>
-            <a href="fotos/100_3518.JPG" data-lightbox="gallery" data-title="Marcha escolar">
-                <img src="fotos/100_3518.JPG" alt="Marcha escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3520.JPG" data-lightbox="gallery" data-title="Evento institucional">
-                <img src="fotos/100_3520.JPG" alt="Evento institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_3522.JPG" data-lightbox="gallery" data-title="Celebración escolar">
-                <img src="fotos/100_3522.JPG" alt="Celebración escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3525.JPG" data-lightbox="gallery" data-title="Actividad deportiva">
-                <img src="fotos/100_3525.JPG" alt="Actividad deportiva" class="gallery-item">
-            </a>
-            <a href="fotos/100_3527.JPG" data-lightbox="gallery" data-title="Evento deportivo">
-                <img src="fotos/100_3527.JPG" alt="Evento deportivo" class="gallery-item">
-            </a>
-            <a href="fotos/100_3528.JPG" data-lightbox="gallery" data-title="Actividad estudiantil">
-                <img src="fotos/100_3528.JPG" alt="Actividad estudiantil" class="gallery-item">
-            </a>
-            <a href="fotos/100_3530.JPG" data-lightbox="gallery" data-title="Evento escolar">
-                <img src="fotos/100_3530.JPG" alt="Evento escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_3533.JPG" data-lightbox="gallery" data-title="Celebración institucional">
-                <img src="fotos/100_3533.JPG" alt="Celebración institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_4078.jpg" data-lightbox="gallery" data-title="Actividad grupal">
-                <img src="fotos/100_4078.jpg" alt="Actividad grupal" class="gallery-item">
-            </a>
-            <a href="fotos/100_4100.jpg" data-lightbox="gallery" data-title="Evento estudiantil">
-                <img src="fotos/100_4100.jpg" alt="Evento estudiantil" class="gallery-item">
-            </a>
-            <a href="fotos/100_4103.jpg" data-lightbox="gallery" data-title="Grupo escolar">
-                <img src="fotos/100_4103.jpg" alt="Grupo escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_4120.jpg" data-lightbox="gallery" data-title="Actividad institucional">
-                <img src="fotos/100_4120.jpg" alt="Actividad institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_4122.jpg" data-lightbox="gallery" data-title="Celebración escolar">
-                <img src="fotos/100_4122.jpg" alt="Celebración escolar" class="gallery-item">
-            </a>
-            <a href="fotos/100_4123.jpg" data-lightbox="gallery" data-title="Evento especial">
-                <img src="fotos/100_4123.jpg" alt="Evento especial" class="gallery-item">
-            </a>
-            <a href="fotos/100_4124.jpg" data-lightbox="gallery" data-title="Actividad grupal">
-                <img src="fotos/100_4124.jpg" alt="Actividad grupal" class="gallery-item">
-            </a>
-            <a href="fotos/100_4126.jpg" data-lightbox="gallery" data-title="Celebración institucional">
-                <img src="fotos/100_4126.jpg" alt="Celebración institucional" class="gallery-item">
-            </a>
-            <a href="fotos/100_4127.jpg" data-lightbox="gallery" data-title="Evento final">
-                <img src="fotos/100_4127.jpg" alt="Evento final" class="gallery-item">
-            </a>
-            <a href="fotos/100_4224.jpg" data-lightbox="gallery" data-title="Actividad de cierre">
-                <img src="fotos/100_4224.jpg" alt="Actividad de cierre" class="gallery-item">
-            </a>
-        </section>
-        
+
+        <div class="container">
+            <div class="gallery">
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/000_2432.jpg" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_0102.jpg" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_0156.jpg" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento deportivo"><img src="fotos/100_0176.jpg" alt="Evento deportivo" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_0191.jpg" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo estudiantil"><img src="fotos/100_0539.jpg" alt="Grupo estudiantil" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_0649.jpg" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile"><img src="fotos/100_2100.jpg" alt="Desfile" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_3451.JPG" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile escolar"><img src="fotos/100_3452.JPG" alt="Desfile escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_3453.JPG" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile"><img src="fotos/100_3459.JPG" alt="Desfile" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo estudiantil"><img src="fotos/100_3460.JPG" alt="Grupo estudiantil" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile militar"><img src="fotos/100_3481.JPG" alt="Desfile militar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_3485.JPG" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile"><img src="fotos/100_3486.JPG" alt="Desfile" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_3487.JPG" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile"><img src="fotos/100_3489.JPG" alt="Desfile" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_3490.JPG" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile"><img src="fotos/100_3495.JPG" alt="Desfile" loading="lazy"></div>
+                <div class="gallery-item" data-title="Evento escolar"><img src="fotos/100_3505.JPG" alt="Evento escolar" loading="lazy"></div>
+                <div class="gallery-item" data-title="Desfile"><img src="fotos/100_3508.JPG" alt="Desfile" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo amarillo"><img src="fotos/100_4103.jpg" alt="Grupo amarillo" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo verde"><img src="fotos/100_4120.jpg" alt="Grupo verde" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo rosa"><img src="fotos/100_4122.jpg" alt="Grupo rosa" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo naranja"><img src="fotos/100_4123.jpg" alt="Grupo naranja" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo azul"><img src="fotos/100_4124.jpg" alt="Grupo azul" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo rojo"><img src="fotos/100_4126.jpg" alt="Grupo rojo" loading="lazy"></div>
+                <div class="gallery-item" data-title="Grupo blanco"><img src="fotos/100_4127.jpg" alt="Grupo blanco" loading="lazy"></div>
+            </div>
+        </div>
     </main>
+
+    <div class="modal" id="imageModal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Imagen ampliada">
+        <div class="nav-btn prev-btn">&lt;</div>
+        <div class="nav-btn next-btn">&gt;</div>
+    </div>
 
     <footer>
         <div class="container">
@@ -273,16 +257,100 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+
     <script>
-        // Asegurarse de que el DOM esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializa la librería de Lightbox
-            lightbox.init();
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        let currentIndex = 0;
+
+        function openModal(index) {
+            currentIndex = index;
+            modalImg.src = galleryItems[index].src;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function showPrevious() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            modalImg.src = galleryItems[currentIndex].src;
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            modalImg.src = galleryItems[currentIndex].src;
+        }
+
+        galleryItems.forEach((img, index) => {
+            img.addEventListener('click', () => openModal(index));
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        prevBtn.addEventListener('click', showPrevious);
+        nextBtn.addEventListener('click', showNext);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.style.display === 'block') {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft') showPrevious();
+                if (e.key === 'ArrowRight') showNext();
+            }
+        });
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        modal.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        modal.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX) {
+                showNext();
+            }
+            if (touchEndX > touchStartX) {
+                showPrevious();
+            }
+        }
+
+        // Burger menu functionality
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            burger.classList.toggle('toggle');
         });
     </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
