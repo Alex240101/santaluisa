@@ -153,10 +153,64 @@
                 <script>
                     // Lista de imágenes del álbum
                     const fotosGaleria = [
-                        "fotos/000_2432.jpg",
-                        "fotos/100_0102.jpg",
-                        "fotos/100_0156.jpg",
-                        "fotos/100_0176.jpg"
+                        "secundaria/foto1.jpeg",
+                        "secundaria/foto2.jpeg",
+                        "secundaria/foto3.jpeg",
+                        "secundaria/foto4.jpeg",
+                        "secundaria/foto5.jpeg",
+                        "secundaria/foto6.jpeg",
+                        "secundaria/foto7.jpeg",
+                        "secundaria/foto8.jpeg",
+                        "secundaria/foto9.jpeg",
+                        "secundaria/foto10.jpeg",
+                        "secundaria/foto11.jpeg",
+                        "secundaria/foto12.jpeg",
+                        "secundaria/foto13.jpeg",
+                        "secundaria/foto14.jpeg",
+                        "secundaria/foto15.jpeg",
+                        "secundaria/foto16.jpeg",
+                        "secundaria/foto17.jpeg",
+                        "secundaria/foto18.jpeg",
+                        "secundaria/foto19.jpeg",
+                        "secundaria/foto20.jpeg",
+                        "secundaria/foto21.jpeg",
+                        "secundaria/foto22.jpeg",
+                        "secundaria/foto23.jpeg",
+                        "secundaria/foto24.jpeg",
+                        "secundaria/foto25.jpeg",
+                        "secundaria/foto26.jpeg",
+                        "secundaria/foto27.jpeg",
+                        "secundaria/foto28.jpeg",
+                        "secundaria/foto29.jpeg",
+                        "secundaria/foto30.jpeg",
+                        "secundaria/foto31.jpeg",
+                        "secundaria/foto32.jpeg",
+                        "secundaria/foto33.jpeg",
+                        "secundaria/foto34.jpeg",
+                        "secundaria/foto35.jpeg",
+                        "secundaria/foto36.jpeg",
+                        "secundaria/foto37.jpeg",
+                        "secundaria/foto38.jpeg",
+                        "secundaria/foto39.jpeg",
+                        "secundaria/foto40.jpeg",
+                        "secundaria/foto41.jpeg",
+                        "secundaria/foto42.jpeg",
+                        "secundaria/foto43.jpeg",
+                        "secundaria/foto44.jpeg",
+                        "secundaria/foto45.jpeg",
+                        "secundaria/foto46.jpeg",
+                        "secundaria/foto47.jpeg",
+                        "secundaria/foto48.jpeg",
+                        "secundaria/foto49.jpeg",
+                        "secundaria/foto50.jpeg",
+                        "secundaria/foto51.jpeg",
+                        "secundaria/foto52.jpeg",
+                        "secundaria/foto53.jpeg",
+                        "secundaria/foto54.jpeg",
+                        "secundaria/foto55.jpeg",
+                        "secundaria/foto56.jpeg",
+                        "secundaria/foto57.jpeg",
+                        "secundaria/foto58.jpeg"
                     ];
         
                     function abrirGaleria() {
@@ -166,7 +220,16 @@
                         fotosGaleria.forEach(foto => {
                             const img = document.createElement('img');
                             img.src = foto;
-                            img.style = "width:200px; height:auto; margin:10px; cursor:pointer; border-radius:10px; box-shadow:0px 4px 6px rgba(0,0,0,0.3); transition: transform 0.3s;";
+                            img.style = `
+                                width: 150px;
+                                height: 150px;
+                                object-fit: cover;
+                                margin: 10px;
+                                cursor: pointer;
+                                border-radius: 10px;
+                                box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+                                transition: transform 0.3s;
+                            `;
                             img.onmouseover = () => img.style.transform = "scale(1.1)";
                             img.onmouseout = () => img.style.transform = "scale(1)";
                             img.onclick = () => abrirModalImagen(foto);
