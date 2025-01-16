@@ -129,7 +129,6 @@ nav {
 
 /* Hero section */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("fotos/portada.jpeg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -138,12 +137,10 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--background-color);
+  color: white;
   padding: 0 1rem;
-}
-
-.hero.static-bg {
-  background-attachment: scroll;
+  animation: slideBackground 15s infinite;
+  position: relative; /* Necesario para los controles de imagen */
 }
 
 .hero h2 {
@@ -151,7 +148,7 @@ nav {
   font-size: 4rem;
   margin-bottom: 1rem;
   animation: fadeInDown 1s ease;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
@@ -203,18 +200,71 @@ nav {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Secciones generales */
-.section {
-  padding: 5rem 0;
+/* Animación para cambiar de imagen */
+@keyframes slideBackground {
+  0% {
+    background-image: url("fotos/portada.jpeg");
+  }
+  33% {
+    background-image: url("fotos/portada1.jpeg");
+  }
+  66% {
+    background-image: url("fotos/portada.jpeg");
+  }
+  100% {
+    background-image: url("fotos/portada1.jpeg");
+  }
+  0% {
+    background-image: url("fotos/portada.jpeg");
+  }
+  33% {
+    background-image: url("fotos/portada1.jpeg");
+  }
+  66% {
+    background-image: url("fotos/portada.jpeg");
+  }
+  100% {
+    background-image: url("fotos/portada1.jpeg");
+  }
 }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: var(--secondary-color);
-  text-align: center;
-  margin-bottom: 3rem;
+/* Contenedor de los botones */
+.image-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  z-index: 2;
 }
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff7f50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff5722;
+}
+
+/* Botón anterior */
+.prev-btn {
+  position: absolute;
+  left: 20px;
+}
+
+/* Botón siguiente */
+.next-btn {
+  position: absolute;
+  right: 20px;
+}
+
 
 /* Features section */
 .features {

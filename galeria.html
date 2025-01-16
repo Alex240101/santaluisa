@@ -129,25 +129,30 @@
                     <img src="fotos/logo_kinder.png" alt="Logo Kindergarten Santa Luisa de Marillac" style="width: 200px; height: auto;">
                 </a>
             </div>
+            <button class="hamburger-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="active underline-effect">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="nuestro-colegio.html">Nuestro Colegio</a>
+                    <a href="nuestro-colegio.html" class="active underline-effect">Nuestro Colegio</a>
                     <ul class="dropdown-menu">
                         <li><a href="galeria.html">Galeria</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="propuesta.html">Propuestas</a>
+                    <a href="propuesta.html" class="active underline-effect">Propuestas</a>
                     <ul class="dropdown-menu">
                         <li><a href="cursos.html">Cursos</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html" class="underline-effect">Contacto</a></li>
                         <li><a href="propuesta-educativa.html">Propuesta Educativa</a></li>
                         <li><a href="infraestructura.html">Infraestructura</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Niveles</a>
+                    <a href="" class="active underline-effect">Niveles</a>
                     <ul class="dropdown-menu">
                         <li><a href="inicial.html">Inicial</a></li>
                         <li><a href="primaria.html">Primaria</a></li>
@@ -155,7 +160,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Calendario y Pagos</a>
+                    <a href="" class="active underline-effect">Calendario y Pagos</a>
                     <ul class="dropdown-menu">
                         <li><a href="calendario.html">Calendario 2025</a></li>
                         <li><a href="pagos.html">Pagos 2025</a></li>
@@ -171,13 +176,11 @@
             </div>
         </nav>
     </header>
-
     <main>
         <section class="gallery-hero">
             <h2>Nuestra Galería</h2>
             <p>Explora los momentos especiales de nuestra comunidad educativa</p>
         </section>
-
         <div class="container">
             <div class="gallery">
                 <div class="gallery-item" data-title="Evento escolar"><img src="fotos/000_2432.jpg" alt="Evento escolar" loading="lazy"></div>
@@ -212,14 +215,12 @@
             </div>
         </div>
     </main>
-
     <div class="modal" id="imageModal">
         <span class="close-btn">&times;</span>
         <img class="modal-content" id="modalImage" alt="Imagen ampliada">
         <div class="nav-btn prev-btn">&lt;</div>
         <div class="nav-btn next-btn">&gt;</div>
     </div>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -257,100 +258,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeBtn = document.querySelector('.close-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-        let currentIndex = 0;
-
-        function openModal(index) {
-            currentIndex = index;
-            modalImg.src = galleryItems[index].src;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        function showPrevious() {
-            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-            modalImg.src = galleryItems[currentIndex].src;
-        }
-
-        function showNext() {
-            currentIndex = (currentIndex + 1) % galleryItems.length;
-            modalImg.src = galleryItems[currentIndex].src;
-        }
-
-        galleryItems.forEach((img, index) => {
-            img.addEventListener('click', () => openModal(index));
-        });
-
-        closeBtn.addEventListener('click', closeModal);
-        prevBtn.addEventListener('click', showPrevious);
-        nextBtn.addEventListener('click', showNext);
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (modal.style.display === 'block') {
-                if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowLeft') showPrevious();
-                if (e.key === 'ArrowRight') showNext();
-            }
-        });
-
-        // Touch events for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        modal.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, false);
-
-        modal.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
-
-        function handleSwipe() {
-            if (touchEndX < touchStartX) {
-                showNext();
-            }
-            if (touchEndX > touchStartX) {
-                showPrevious();
-            }
-        }
-
-        // Burger menu functionality
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links');
-        const navLinks = document.querySelectorAll('.nav-links li');
-
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('nav-active');
-            
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-
-            burger.classList.toggle('toggle');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

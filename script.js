@@ -537,6 +537,99 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        let currentIndex = 0;
+
+        function openModal(index) {
+            currentIndex = index;
+            modalImg.src = galleryItems[index].src;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function showPrevious() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            modalImg.src = galleryItems[currentIndex].src;
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            modalImg.src = galleryItems[currentIndex].src;
+        }
+
+        galleryItems.forEach((img, index) => {
+            img.addEventListener('click', () => openModal(index));
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        prevBtn.addEventListener('click', showPrevious);
+        nextBtn.addEventListener('click', showNext);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.style.display === 'block') {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft') showPrevious();
+                if (e.key === 'ArrowRight') showNext();
+            }
+        });
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        modal.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        modal.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX) {
+                showNext();
+            }
+            if (touchEndX > touchStartX) {
+                showPrevious();
+            }
+        }
+
+        // Burger menu functionality
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            burger.classList.toggle('toggle');
+        });
+
 
 
 
