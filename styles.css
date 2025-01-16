@@ -138,6 +138,8 @@ nav {
   align-items: center;
   text-align: center;
   color: white;
+  text-shadow: 2px 2px 5px rgba(0, 128, 0, 1), 0 0 25px rgba(0, 128, 0, 0.8), 0 0 5px rgba(0, 128, 0, 0.9);
+
   padding: 0 1rem;
   animation: slideBackground 15s infinite;
   position: relative; /* Necesario para los controles de imagen */
