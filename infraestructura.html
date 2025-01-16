@@ -44,7 +44,6 @@
                     <a href="propuesta.html" class="active underline-effect">Propuestas</a>
                     <ul class="dropdown-menu">
                         <li><a href="cursos.html">Cursos</a></li>
-                        <li><a href="profesores.html" class="underline-effect">Profesores</a></li>
                         <li><a href="contacto.html" class="underline-effect">Contacto</a></li>
                         <li><a href="propuesta-educativa.html">Propuesta Educativa</a></li>
                         <li><a href="infraestructura.html">Infraestructura</a></li>
@@ -73,37 +72,186 @@
 
     <main>
         <section class="infrastructure-section">
-            <h2>---------</h2>
-            <h2>---------</h2>
-            <h2>Nuestra Infraestructura</h2>
-            <h2>---------</h2>
+
+            <h2 style="color: #006400;">NUESTRA INFRAESTRUCTURA</h2>
+
+
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Aulas modernas">
-                    <p>Aulas modernas equipadas con tecnología de última generación</p>
+                    <img src="infraestructura/foto1.jpeg" alt="Aulas modernas">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Laboratorio de ciencias">
-                    <p>Laboratorio de ciencias completamente equipado para experimentos prácticos</p>
+                    <img src="infraestructura/foto10.jpeg" alt="Laboratorio de ciencias">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Biblioteca">
-                    <p>Biblioteca amplia con una extensa colección de libros y recursos digitales</p>
+                    <img src="infraestructura/foto11.jpeg" alt="Biblioteca">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Áreas deportivas">
-                    <p>Áreas deportivas para fomentar la actividad física y el trabajo en equipo</p>
+                    <img src="infraestructura/foto12.jpeg" alt="Áreas deportivas">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Sala de cómputo">
-                    <p>Sala de cómputo con equipos actualizados para el aprendizaje tecnológico</p>
+                    <img src="infraestructura/foto12.jpeg" alt="Sala de cómputo">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Auditorio">
-                    <p>Auditorio para eventos escolares y presentaciones estudiantiles</p>
+                    <img src="infraestructura/foto13.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto14.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto15.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto16.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto17.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto2.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto3.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="infraestructura/foto4.jpeg" alt="Auditorio">
+                    <div class="heart-container">
+                        <span class="heart" onclick="showHearts(event)">💚</span>
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </section>
+        
+        <style>
+            .heart-container {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                flex-direction: column;
+            }
+        
+            .heart {
+                font-size: 50px;
+                cursor: pointer;
+                position: relative;
+                animation: heartbeat 1.5s infinite;
+                color: green;
+            }
+        
+            .heart-animation {
+                position: absolute;
+                animation: heart-animation 1s ease-out;
+                font-size: 20px;
+                color: green;
+                z-index: 1000;
+            }
+        
+            @keyframes heartbeat {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        
+            @keyframes heart-animation {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.5);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+            }
+        </style>
+        
+        <script>
+            function showHearts(event) {
+                const heartContainer = event.target.closest('.heart-container');
+                const heart = event.target; // Corazón principal (el que se clickea)
+        
+                // Calculamos la posición exacta del corazón en el contenedor
+                const rect = heart.getBoundingClientRect();
+                const containerRect = heartContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2 - containerRect.left;
+                const centerY = rect.top + rect.height / 2 - containerRect.top;
+        
+                for (let i = 0; i < 10; i++) {
+                    const heartAnim = document.createElement('span');
+                    heartAnim.classList.add('heart-animation');
+                    heartAnim.textContent = '💚';
+        
+                    // Posicionamos el corazón en la posición exacta del corazón principal
+                    heartAnim.style.left = `${centerX + (Math.random() * 30 - 15)}px`;
+                    heartAnim.style.top = `${centerY + (Math.random() * 30 - 15)}px`;
+                    heartContainer.appendChild(heartAnim);
+        
+                    // Eliminar el corazón después de la animación
+                    setTimeout(() => heartAnim.remove(), 1000);
+                }
+            }
+        </script>
+        
     </main>
 
     <footer>
@@ -119,14 +267,13 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="nuestro-colegio.html">Nuestro Colegio</a></li>
                         <li><a href="propuesta.html">Propuestas</a></li>
-                        <li><a href="profesores.html">Profesores</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contacto</h3>
                     <p><i class="fas fa-map-marker-alt"></i> INICIAL - Jr. Huascar 134, San gregorio</p>
-                    <p><i class="fas fa-map-marker-alt"></i> PRIMARIA Y SECUNDARIA - Calle Umaru Mz E Lot 6, San Gregorio - Ate</p>
+                    <p><i class="fas fa-map-marker-alt"></i> PRIMARIA Y SECUNDARIA - Calle Umaru Mz E Lt. 6, San Gregorio - Ate</p>
                     <p><i class="fas fa-phone"></i> (01) 300-2295</p>
                     <p><i class="fab fa-whatsapp"></i> +51 997562008</p>
                 </div>
