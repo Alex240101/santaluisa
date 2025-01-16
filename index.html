@@ -144,24 +144,103 @@
             <div class="container">
                 <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
                 <div class="testimonials-slider">
-                    <div class="testimonial">
-                        <p>"La educación que recibí en Santa Luisa de Marillac me ha preparado para enfrentar los desafíos universitarios con confianza."</p>
-                        <h4>María García</h4>
-                        <p>Egresada 2022</p>
+                    <!-- Primera fila de 3 testimonios -->
+                    <div class="testimonial-row">
+                        <div class="testimonial">
+                            <img src="fotos/profesora.jpg" alt="Foto de María García" class="testimonial-photo">
+                            <p>"La educación que recibí en Santa Luisa de Marillac me ha preparado para enfrentar los desafíos universitarios con confianza."</p>
+                            <h4>María García</h4>
+                            <p>Egresada 2022</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="fotos/profesor.jpg" alt="Foto de Juan Pérez" class="testimonial-photo">
+                            <p>"Los profesores no solo se preocupan por nuestra educación académica, sino también por nuestro crecimiento personal."</p>
+                            <h4>Juan Pérez</h4>
+                            <p>Estudiante de 5to año</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="fotos/profesora.jpg" alt="Foto de Ana Rodríguez" class="testimonial-photo">
+                            <p>"El ambiente familiar y los valores que se inculcan en Santa Luisa hacen que cada día sea una experiencia enriquecedora."</p>
+                            <h4>Ana Rodríguez</h4>
+                            <p>Estudiante de 3er año</p>
+                        </div>
                     </div>
-                    <div class="testimonial">
-                        <p>"Los profesores no solo se preocupan por nuestra educación académica, sino también por nuestro crecimiento personal."</p>
-                        <h4>Juan Pérez</h4>
-                        <p>Estudiante de 5to año</p>
+        
+                    <!-- Separador después de la primera fila -->
+                    <div class="separator"></div>
+        
+                    <!-- Segunda fila de 3 testimonios -->
+                    <div class="testimonial-row">
+                        <div class="testimonial">
+                            <img src="fotos/profesor.jpg" alt="Foto de Carlos Sánchez" class="testimonial-photo">
+                            <p>"Las actividades extracurriculares me han permitido crecer tanto profesional como personalmente."</p>
+                            <h4>Carlos Sánchez</h4>
+                            <p>Estudiante de 4to año</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="fotos/profesora.jpg" alt="Foto de Laura Gómez" class="testimonial-photo">
+                            <p>"El compromiso de los docentes con nuestra educación es ejemplar, siempre motivándonos a ser mejores."</p>
+                            <h4>Laura Gómez</h4>
+                            <p>Estudiante de 3er año</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="fotos/profesor.jpg" alt="Foto de Pablo Herrera" class="testimonial-photo">
+                            <p>"Santa Luisa es un lugar donde los estudiantes no solo aprenden, sino también crecen como personas."</p>
+                            <h4>Pablo Herrera</h4>
+                            <p>Estudiante de 2do año</p>
+                        </div>
                     </div>
-                    <div class="testimonial">
-                        <p>"El ambiente familiar y los valores que se inculcan en Santa Luisa hacen que cada día sea una experiencia enriquecedora."</p>
-                        <h4>Ana Rodríguez</h4>
-                        <p>Estudiante de 3er año</p>
-                    </div>
+        
+                    <!-- Separador después de la segunda fila -->
+                    <div class="separator"></div>
+
+                    
+
                 </div>
             </div>
+        
+            <style>
+                .testimonials-slider {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+        
+                .testimonial-row {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+        
+                .testimonial {
+                    text-align: center;
+                    margin: 10px;
+                    width: calc(33% - 20px);  /* Ancho para 3 testimonios por fila */
+                    box-sizing: border-box;
+                    position: relative;
+                }
+        
+                .testimonial:not(:last-child) {
+                    border-right: 2px solid #ccc; /* Separador entre columnas */
+                }
+        
+                .testimonial-photo {
+                    width: 60px;  /* Tamaño pequeño de la foto */
+                    height: 60px;
+                    border-radius: 50%;  /* Para hacerlo circular */
+                    object-fit: cover;  /* Ajustar la imagen al contorno */
+                    margin-bottom: 10px;  /* Espacio entre la imagen y el testimonio */
+                }
+        
+                .separator {
+                    width: 100%;
+                    height: 2px;
+                    background-color: #ccc; /* Color del separador */
+                    margin: 20px 0; /* Espaciado arriba y abajo del separador */
+                }
+            </style>
         </section>
+        
 
         <section class="cta-section parallax">
             <div class="container">
