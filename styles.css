@@ -138,30 +138,51 @@ nav {
   align-items: center;
   text-align: center;
   color: white;
-  
   text-shadow: 2px 2px 5px rgba(0, 128, 0, 1), 0 0 25px rgba(0, 128, 0, 0.8), 0 0 5px rgba(0, 128, 0, 0.9);
-  
   padding: 0 1rem;
-  animation: slideBackground 15s infinite;
-  
-  position: relative; /* Necesario para los controles de imagen */
+  animation: slideBackground 40s infinite;
+  position: relative;
+  background-repeat: no-repeat;
 }
 
+/* Control de imágenes responsivas */
+@media (max-width: 768px) {
+  .hero {
+    background-size: contain;
+    background-position: top center;
+  }
+}
 
+@media (max-width: 480px) {
+  .hero {
+    background-size: cover;
+    height: 80vh;
+  }
+}
 
 /* Animación para cambiar de imagen */
 @keyframes slideBackground {
   0% {
     background-image: url("fotos/portada.jpeg");
   }
-  33% {
+  33.33% {
     background-image: url("fotos/portada1.jpeg");
   }
-  66% {
+  66.66% {
     background-image: url("fotos/portada2.jpeg");
   }
   100% {
     background-image: url("fotos/portada.jpeg");
+  }
+}
+
+/* Control de visibilidad del texto */
+@keyframes textVisibility {
+  0%, 20% {
+    opacity: 1; /* Texto visible durante los primeros 8 segundos */
+  }
+  21%, 100% {
+    opacity: 0; /* Texto oculto después de los 8 segundos */
   }
 }
 
@@ -170,24 +191,48 @@ nav {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
   margin-bottom: 1rem;
-  animation: fadeInDown 1s ease;
+  animation: fadeInDown 0s ease, textVisibility 40s infinite;
   color: white;
   text-shadow: 
     0 0 3px rgba(0, 0, 0, 0.8), 
     0 0 6px rgba(0, 0, 0, 0.8), 
     0 0 8px rgba(0, 0, 0, 0.8),
     0 0 10px rgba(0, 0, 0, 0.8);
-
+  text-align: center;
 }
 
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
 
 .hero p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  animation: fadeInUp 1s ease;
+  animation: fadeInUp 0s ease, textVisibility 40s infinite;
   max-width: 600px;
 }
 
+@media (max-width: 768px) {
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Botón de llamado a la acción */
 .cta-button {
   background-color: var(--primary-color);
   color: var(--background-color);
@@ -196,7 +241,7 @@ nav {
   font-weight: bold;
   text-decoration: none;
   transition: all var(--transition-speed) ease;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 0s ease, textVisibility 40s infinite;
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -229,6 +274,7 @@ nav {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Features section */
 .features {
